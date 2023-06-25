@@ -60,11 +60,17 @@ Rating state start
     height: 40px;
     background-color: var(--DarkBlue2);
     border-radius: 50%;
+    cursor:pointer;
 }
 
 .hover:hover {
-    background-color: var(--Orange);
+    background-color: var(--LightGrey);
     color: var(--White)
+}
+
+.hover:active{
+    background-color: var(--Orange);
+    color: var(--White);
 }
 
 .submit {
@@ -77,23 +83,39 @@ Rating state start
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing:.1rem;
+    cursor:pointer;
 }
 
-/* .tahnkyoustage {
-    background-color: var(--White) ;
-    color:var(--Orange);
-} */
+/* --------------
+      thanks 
+---------------- */
 
-.tahnkyoustage {
- background-color: var(--DarkBlue2);
+.thankyoustage {
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--DarkBlue);
+    border-radius: 15px;
+}
+
+.thankyoustage > * {
+    margin: 35px 20px;
+    text-align: center;
+}
+
+.thankyoustage h2 {
+    color: var(--White)
 }
 
 .select {
-    background-color: var(--LightGrey);
+    padding: 7px;
+    background-color: var(--DarkBlue2);
+    color: var(--Orange);
+    border-radius: 35px;
 }
 
 @media (min-width:375px) {
-    .ratingstate {
+    .ratingstate, .thankyoustage {
         width: 450px;
         position:absolute;
         left:calc(50% - 225px);
