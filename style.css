@@ -58,20 +58,19 @@ Rating state start
     align-items: center;
     width:40px;
     height: 40px;
-    background-color: var(--DarkBlue2);
+    color: var(--White);
+    background-color: rgb(50, 58, 73);
     border-radius: 50%;
     cursor:pointer;
+    transition: background-color .5s ease
 }
 
-.hover:hover {
-    background-color: var(--LightGrey);
-    color: var(--White)
-}
-
-.hover:active{
+.round-background:hover {
     background-color: var(--Orange);
     color: var(--White);
+    
 }
+
 
 .submit {
     width: calc(100% - 40px);
@@ -84,6 +83,15 @@ Rating state start
     text-transform: uppercase;
     letter-spacing:.1rem;
     cursor:pointer;
+    transition: background-color .5s ease;
+}
+
+.submit:hover {
+    background-color: hsl(25, 92%, 58%);
+}
+
+.hidden {
+    display:none;
 }
 
 /* --------------
@@ -114,7 +122,7 @@ Rating state start
     border-radius: 35px;
 }
 
-@media (min-width:375px) {
+@media (min-width:376px) {
     .ratingstate, .thankyoustage {
         width: 450px;
         position:absolute;

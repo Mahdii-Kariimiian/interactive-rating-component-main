@@ -1,42 +1,37 @@
-let submitEl = document.getElementById("submit-el");
-let rateEl = document.getElementById("rate-el");
-let oneEl = document.getElementById("1");
-let twoEl = document.getElementById("2");
-let threeEl = document.getElementById("3");
-let fourEl = document.getElementById("4");
-let fiveEl = document.getElementById("5");
-let score;
 
-oneEl.addEventListener("click", function(e) {
-    score = 1;
-    e.target.style.backgroundColor = 'hsl(25, 97%, 53%)';
-    console.log(score);
+const ratingNumbers = document.querySelector(".rating-numbers")
+const roundBackground = document.querySelectorAll(".hover")
+const rateEl = document.getElementById("rate-el")
+const submit = document.querySelector(".submit")
+const thankyoustage = document.querySelector(".thankyoustage")
+const ratingstate = document.querySelector(".ratingstate")
+let forvalidation 
+let myId
+
+ratingNumbers.addEventListener("click" , function (number){
+    if(number.target.id) {
+        forvalidation = number.target.id
+        myId = number.target.parentElement.children
+        number.target.style.backgroundColor = "hsl(216, 12%, 54%)"
+        roundBackground.forEach((rates)=>{
+            if (myId[number.target.id] !== rates) {
+                rates.style.backgroundColor = "rgb(50, 58, 73)"
+            }
+        })
+        rateEl.innerText = parseFloat(number.target.id) + 1
+    }
 })
 
-twoEl.addEventListener("click", function(e) {
-    score = 2;
-    e.target.style.backgroundColor = 'hsl(25, 97%, 53%)';
-    console.log(score);
-})
+submit.addEventListener ("click" , ()=>{
 
-threeEl.addEventListener("click", function(e) {
-    score = 3;
-    e.target.style.backgroundColor = 'hsl(25, 97%, 53%)';
-    console.log(score);
+    if (!forvalidation) {
+        alert("dfudfyg")
+        submit.removeEventListener("click" , ()=>{
+            alert("dfudfyg")
+        })
+    } else {
+        thankyoustage.classList.remove("hidden")
+        ratingstate.classList.add("hidden")
+    }
+    
 })
-
-fourEl.addEventListener("click", function(e) {
-    score = 4;
-    e.target.style.backgroundColor = 'hsl(25, 97%, 53%)';
-    console.log(score);
-})
-
-fiveEl.addEventListener("click", function(e) {
-    score = 5;
-    e.target.style.backgroundColor = 'hsl(25, 97%, 53%)';
-    console.log(score);
-})
-
-submitEl.addEventListener("click", function() {
-    rateEl.innerHTML = "You selected " + score + " out of 5";
-});
